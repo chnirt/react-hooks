@@ -1,0 +1,14 @@
+{
+  "name": "react-hooks",
+  "version": "1.0.0",
+  "description": "Library Custom React Hooks",
+  "main": "index.ts",
+  "scripts": {
+    "test": "yarn test"
+  },
+  "keywords": [
+    "react-hooks"
+  ],
+  "author": "chnirt",
+  "license": "ISC"
+}
