@@ -1,25 +1,41 @@
-version: 2.1
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check {{ '/2.0/language-javascript/' | docs_url }} for more details
+#
+version: 2
+
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: circleci/node:8.9.1
 
 jobs:
-  publish:
-    docker:
-      - image: circleci/node:10
+  test:
+    <<: *defaults
     steps:
       - checkout
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+
+      - run: npm install
       - run:
-        name: Setup .npmrc credentials
-        command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
-      - run: npm ci
-      - run: npm run build
-      - run: npm publish
+          name: Run tests
+          command: npm test
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
 
 workflows:
   version: 2
-  publish:
+  only_test:
     jobs:
-      - publish:
-        filters:
-          branches:
-            ignore: /.*/
-          tags:
-            only: /^v.*/
+      - test
