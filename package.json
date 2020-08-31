@@ -1,6 +1,6 @@
 {
 	"name": "@chnirt/react-hooks",
-	"version": "1.2.0",
+	"version": "2.0.0",
 	"description": "Library Custom React Hooks",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
