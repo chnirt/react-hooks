@@ -5,12 +5,14 @@ export interface ICounter {
 	value: number
 	/**
 	 * A callback that will increase.
-	 * @param {String} identity - Identity
-	 * @returns {String} token - Access token
+	 *
+	 * @returns {void} void - void
 	 */
 	increment: () => void
 	/**
 	 * A callback that will decrease.
+	 *
+	 * @returns {void} void - void
 	 */
 	decrement: () => void
 }

@@ -5,9 +5,10 @@
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"scripts": {
+		"test": "ls",
 		"build": "tsc",
 		"prepare": "npm run build",
-		"preversion": "npm test",
+		"preversion": "npm run test",
 		"version": "npm run build && git add -A dist",
 		"postversion": "git push && git push --tags && rm -rf build/temp"
 	},
@@ -40,6 +41,7 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@chnirt/react-hooks": "^1.0.23"
+		"@chnirt/react-hooks": "^1.0.23",
+		"react-i18next": "^11.7.2"
 	}
 }
