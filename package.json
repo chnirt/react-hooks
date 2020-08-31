@@ -19,7 +19,6 @@
 	"author": "Chnirt <trinhchinchin@gmail.com>",
 	"license": "ISC",
 	"peerDependencies": {
-		"@types/jest": "^26.0.10",
 		"@types/node": "^14.6.2",
 		"@types/react": "^16.9.48",
 		"@types/react-dom": "^16.9.8",
@@ -28,19 +27,10 @@
 		"ts-node": "^9.0.0",
 		"typescript": "^4.0.2"
 	},
-	"devDependencies": {
-		"@types/node": "^14.6.2",
-		"ts-node": "^9.0.0",
-		"typescript": "^4.0.2"
-	},
 	"files": [
 		"dist"
 	],
 	"publishConfig": {
 		"access": "public"
-	},
-	"dependencies": {
-		"@chnirt/react-hooks": "^1.0.23",
-		"react-i18next": "^11.7.2"
 	}
 }

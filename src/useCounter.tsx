@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { ICounter } from './typings'
 
 /**
@@ -20,4 +20,16 @@ export const useCounter = (): ICounter => {
 		increment,
 		decrement,
 	}
+}
+
+export const DOMCounter = () => {
+	const { value, increment, decrement } = useCounter()
+
+	return (
+		<div>
+			<h1>{value}</h1>
+			<button onClick={increment}>+</button>
+			<button onClick={decrement}>-</button>
+		</div>
+	)
 }
