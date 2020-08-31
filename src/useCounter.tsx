@@ -1,20 +1,5 @@
 import { useState } from 'react'
-// import { ICounter } from './type'
-
-interface ICounter {
-	/**
-	 * A callback that will show current value.
-	 */
-	value: number
-	/**
-	 * A callback that will increase.
-	 */
-	increment: () => void
-	/**
-	 * A callback that will decrease.
-	 */
-	decrement: () => void
-}
+import { ICounter } from './typings'
 
 /**
  * A custom hook to use `counter` inside a React component
@@ -26,6 +11,9 @@ export const useCounter = (): ICounter => {
 		setValue(value + 1)
 	}
 
+	/**
+	 * 🥡
+	 */
 	const decrement = () => {
 		setValue(value - 1)
 	}

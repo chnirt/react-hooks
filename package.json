@@ -1,18 +1,22 @@
 {
 	"name": "@chnirt/react-hooks",
-	"version": "1.0.13",
+	"version": "1.0.24",
 	"description": "Library Custom React Hooks",
-	"main": "index.ts",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"scripts": {
-		"test": "yarn test",
+		"build": "tsc",
+		"prepare": "npm run build",
 		"preversion": "npm test",
 		"version": "npm run build && git add -A dist",
 		"postversion": "git push && git push --tags && rm -rf build/temp"
 	},
 	"keywords": [
-		"react-hooks"
+		"react-hooks",
+		"typescript",
+		"library"
 	],
-	"author": "chnirt",
+	"author": "Chnirt <trinhchinchin@gmail.com>",
 	"license": "ISC",
 	"peerDependencies": {
 		"@types/jest": "^26.0.10",
@@ -21,6 +25,21 @@
 		"@types/react-dom": "^16.9.8",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
+		"ts-node": "^9.0.0",
 		"typescript": "^4.0.2"
+	},
+	"devDependencies": {
+		"@types/node": "^14.6.2",
+		"ts-node": "^9.0.0",
+		"typescript": "^4.0.2"
+	},
+	"files": [
+		"dist"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"@chnirt/react-hooks": "^1.0.23"
 	}
 }
